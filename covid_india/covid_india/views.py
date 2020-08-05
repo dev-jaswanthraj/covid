@@ -12,7 +12,7 @@ def home(request):
     total_active_case = information.find(class_='iblock active-case').find(class_ = 'icount').get_text()
     Cured_Discharged = information.find(class_='iblock discharge').find(class_ = 'icount').get_text()
     dead_case = information.find(class_='iblock death_case').find(class_ = 'icount').get_text()
-    migrated = information.find(class_='iblock migared_case').find(class_ = 'icount').get_text()
+    #migrated = information.find(class_='iblock migared_case').find(class_ = 'icount').get_text()
 
     state_count = soup.find_all(class_ = 'views-row')
     detail = [[] for i in range(len(state_count)) ]
@@ -29,7 +29,7 @@ def home(request):
         "TotalCase":total_active_case,
         "TotalRecoverCase":Cured_Discharged,
         "TotalDeadCase":dead_case,
-        "Migrated" :migrated,
+        #"Migrated" :migrated,
     }
     return render(request,'index.html',context)
 
